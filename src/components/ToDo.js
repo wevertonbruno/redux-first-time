@@ -2,7 +2,10 @@ import React from 'react';
 import {connect} from 'react-redux';
 import { removeTodo, toggleTodo } from '../redux/actions';
 
-// import { Container } from './styles';
+import { TodoContainer } from './styles';
+import falseIcon from '../assets/falseIcon.svg';
+import trueIcon from '../assets/trueIcon.svg';
+import removeIcon from '../assets/removeIcon.svg';
 
 function ToDo({ item, toggleTodo }) {
 
@@ -13,15 +16,15 @@ function ToDo({ item, toggleTodo }) {
   
 
   return (
-    <Container>
+    <TodoContainer>
       <div className="content">
         {item.content} 
       </div>
       <div className="actions">
-        <img className="toggle" src={toggleIcon}/>
-        <img className="remove" src={removeIcon}/>
+        <img className="toggle" src={ item.completed ? trueIcon : falseIcon }/>
+        <img className="remove" src={ removeIcon }/>
       </div>
-    </Container>
+    </TodoContainer>
   );
 }
 
