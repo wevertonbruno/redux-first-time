@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import { addTodo } from '../redux/actions';
 
-// import { Container } from './styles';
+import { AddContainer } from './styles';
 
 function Add({ addTodo }) {
 
@@ -16,10 +16,10 @@ function Add({ addTodo }) {
     };
 
     return (
-        <div>
+        <AddContainer>
             <input name="todoInput" onChange={ e => setInput(e.target.value) } value={input}/>
             <button onClick={handleTodo}>Add</button>
-        </div>
+        </AddContainer>
     );
 }
 

@@ -2,7 +2,8 @@ import { ADD_TODO, TOGGLE_TODO, REMOVE_TODO } from "../actionTypes";
 
 const initialState = {
   allIds: [],
-  byIds: {}
+  byIds: {},
+  count: 0
 };
 
 export default function(state = initialState, action) {
@@ -12,6 +13,7 @@ export default function(state = initialState, action) {
       return {
         ...state,
         allIds: [...state.allIds, id],
+        count: state.count + 1,
         byIds: {
           ...state.byIds,
           [id]: {
@@ -43,6 +45,7 @@ export default function(state = initialState, action) {
       return {
         ...state,
         allIds: state.allIds.filter(i => i !== id),
+        count: state.count - 1,
         byIds: {
           ...newByIds
         }

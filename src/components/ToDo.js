@@ -18,11 +18,8 @@ function ToDo({ item, toggleTodo }) {
   return (
     <TodoContainer>
       <div className="content">
-        {item.content} 
-      </div>
-      <div className="actions">
-        <img className="toggle" src={ item.completed ? trueIcon : falseIcon }/>
-        <img className="remove" src={ removeIcon }/>
+        <input id={"check" + item.id} type="checkbox" onClick={() => toggleTodo(item.id)} checked={item.completed ? true : false}/>
+        <label for={"check" + item.id}>{item.content}</label>
       </div>
     </TodoContainer>
   );

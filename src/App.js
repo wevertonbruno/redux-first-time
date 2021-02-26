@@ -4,14 +4,18 @@ import Add from './components/Add';
 import List from './components/List';
 import Filters from './components/Filters';
 
+import { AppContainer } from './components/styles';
+
 function App() {
   return (
-    <div className="App">
-      <h1>ToDo List</h1>
-      <Add />
-      <List />
-      <Filters />
-    </div>
+    <AppContainer>
+        <section>
+          <h1>ToDo List</h1>
+          <Add />
+          <List />
+          <Filters />
+        </section>
+    </AppContainer>
   );
 }
 
